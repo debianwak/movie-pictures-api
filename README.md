@@ -51,8 +51,10 @@ You can access the API documentation using Swagger UI. Visit the following URL i
 ### Open API Documentation
 
 ### PostMan API collection
-https://api.postman.com/collections/9399182-442dee2e-90de-4de1-8e43-be8e52efb6af?access_key=PMAT-01HQM0C453X8ZEGMZF51WA7YF6
-
+The Postman JSON collection is available here:
+```
+src/main/resources/movie-pictures-api.postman_collection.json
+```
 
 You can access the Open API documentation visiting the following URL in your browser:
 http://localhost:8080/v3/api-docs
