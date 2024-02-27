@@ -15,8 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.Arrays;
 
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
@@ -89,7 +88,7 @@ public class MoviesRestControllerTest {
     public void testVoteUpMovieImage() throws Exception {
         Long movieId = 1L;
 
-        mockMvc.perform(post("/movies/vote-up/{movieId}", movieId))
+        mockMvc.perform(put("/movies/{movieId}/vote-up", movieId))
                 .andExpect(status().isOk());
 
         verify(moviesServicePort, times(1)).voteUpMoviePicture(movieId);
@@ -99,7 +98,7 @@ public class MoviesRestControllerTest {
     public void testVoteDownMovieImage() throws Exception {
         Long movieId = 1L;
 
-        mockMvc.perform(post("/movies/vote-down/{movieId}", movieId))
+        mockMvc.perform(put("/movies/{movieId}/vote-down", movieId))
                 .andExpect(status().isOk());
 
         verify(moviesServicePort, times(1)).voteDownMoviePicture(movieId);

@@ -29,13 +29,13 @@ public class MoviesRestController {
         return new ResponseEntity<>(moviePictures, HttpStatus.OK);
     }
 
-    @PostMapping("/vote-up/{movieId}")
+    @PutMapping("/{movieId}/vote-up")
     public ResponseEntity<?> voteUpMovieImage(@PathVariable("movieId") Long movieId) {
         moviesServicePort.voteUpMoviePicture(movieId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping("/vote-down/{movieId}")
+    @PutMapping("/{movieId}/vote-down")
     public ResponseEntity<?> voteDownMovieImage(@PathVariable("movieId") Long movieId) {
         moviesServicePort.voteDownMoviePicture(movieId);
         return new ResponseEntity<>(HttpStatus.OK);
